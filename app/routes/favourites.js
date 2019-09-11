@@ -13,6 +13,8 @@ export default class FavouritesRoute extends Route {
 
     @task(function* () {
         const movies = yield this.movies.getLikedMovies();
-        return movies;
+        return movies.sort(function(movie1, movie2) {
+            return  new Date(movie2.release_date) - new Date(movie1.release_date);
+        });
     }) likedTask;
 }

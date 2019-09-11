@@ -1,20 +1,6 @@
 <section class='likes page'>
+    <h1 class='title'>Your Favourite Movies</h1>
     {{#unless model.likedMovies.isRunning}}
-    <table class='likes_table'>
-        <thead>
-            <tr>
-                <td class='likes_cell'>Title</td>
-                <td class='likes_cell'>Release Date</td>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each model.likedMovies.value as | movie |}}
-            <tr>
-                <td class='likes_cell'>{{movie.title}}</td>
-                <td class='likes_cell'>{{movie.release_date}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+        <Favourites @likedMovies={{model.likedMovies.value}} />
     {{/unless}}
 </section>

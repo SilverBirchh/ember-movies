@@ -1,0 +1,17 @@
+<table class='likes_table'>
+    <thead>
+        <tr>
+            <td class='likes_cell'>Title</td>
+            <td class='likes_cell'>Release Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each @likedMovies as | movie |}}
+        <tr>
+            <td class='likes_cell'>{{movie.title}}</td>
+            <td class='likes_cell'>{{date movie.release_date}}</td>
+            <td class='likes_cell likes_bin' role='button' {{on 'click' (fn this.dislikeMovie movie.id)}}></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
