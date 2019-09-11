@@ -1,0 +1,15 @@
+<h1 class='title'>{{@movie.title}}</h1>
+<section class='movie-page_details'>
+    <div class='movie-page_image-container'>
+        <div class='heart {{if @isLiked 'heart--liked'}}' role='button'
+            {{on "click" (if @isLiked (fn this.dislikeMovie @movie.id) (fn this.likeMovie @movie.id))}}></div>
+        <img class='movie-page_image' src={{this.posterUrl}} loading='lazy' alt={{@movie.title}} />
+    </div>
+    <div class='movie-page_overview'>
+        <p>{{@movie.overview}}</p>
+        <br />
+        <p>Rating: {{@movie.vote_average}} / 10</p>
+        <br />
+        <p>Released: {{date @movie.release_date}}</p>
+    </div>
+</section>

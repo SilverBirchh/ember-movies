@@ -1,6 +1,6 @@
 <section class='home page'>
     <h1 class='home_title title'>Popular Movies</h1>
-    {{#if (and model.movies.isRunning model.likedMovies.isRunning)}}
+    {{#if (or model.movies.isRunning model.likedMovies.isRunning)}}
         <p class='home_loading'>Fetching movies...</p>
     {{else}}
         <div class='home_movies'>

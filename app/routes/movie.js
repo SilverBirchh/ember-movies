@@ -7,7 +7,8 @@ export default class MovieRoute extends Route {
 
     model({ id }) {
         return {
-            movie: this.movieTask.perform(id)
+            movie: this.movieTask.perform(id),
+            likedMovies: this.likedTask.perform(),
         }
     }
 
@@ -15,4 +16,9 @@ export default class MovieRoute extends Route {
         const movie = yield this.movies.getMoviesById(id);
         return movie;
     }) movieTask;
+
+    @task(function* () {
+        const movies = yield this.movies.getLikedMovies();
+        return movies;
+    }) likedTask;
 }

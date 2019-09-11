@@ -1,3 +1,6 @@
-<section class='likes page'>
-    {{#unless model.movie.isRunning}}{{/unless}}
+<section class='movie page'>
+    {{#if (or model.movie.isRunning model.likedMovies.isRunning)}}
+    {{else}}
+        <MoviePage @movie={{model.movie.value}} @isLiked={{contains model.likedMovies.value model.movie.value.id}} />
+    {{/if}}
 </section>

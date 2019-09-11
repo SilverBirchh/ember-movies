@@ -10,7 +10,7 @@ export default class MyComponent extends Component {
 
     @computed('posterUrl')
     get posterUrl() {
-        return `https://image.tmdb.org/t/p/w500/${this.args.posterUrl}?api_key=${ENV.APP.key}`
+        return `https://image.tmdb.org/t/p/w500/${this.args.movie.poster_path}?api_key=${ENV.APP.key}`
     }
 
     @action

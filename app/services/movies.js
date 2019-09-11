@@ -48,4 +48,20 @@ export default class MoviesService extends Service {
 
         return this.movies;
     }
+
+    async getMoviesById(id) {
+        if (this.movies === null) {
+            await this.getMovies();
+        }
+        const movie = this.movies.results.findBy('id', parseInt(id));
+
+        if (movie) {
+            return movie;
+        }
+
+        const params = [
+            'language=en-US',
+        ]
+        return this.fetch.authFetch(`movie/${id}`, params);
+    }
 }
