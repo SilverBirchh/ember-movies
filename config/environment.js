@@ -18,6 +18,7 @@ module.exports = function(environment) {
       }
     },
     APP: {
+      key: '831192756b78779405dfccf88784f07b',
       // Here you can pass flags/options to your application instance
       // when it is created
     }

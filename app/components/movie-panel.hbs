@@ -1,0 +1,5 @@
+<div class='movie-panel'>
+    <img class='movie-panel_image' src={{this.posterUrl}} loading='lazy' alt={{@title}} />
+    <p class='movie-panel_title'>{{@title}}</p>
+    <div class='movie-panel_heart {{if @isLiked 'movie-panel_heart--liked'}}' role='button' {{on "click" (if @isLiked (fn this.dislikeMovie @id) (fn this.likeMovie @id))}}></div>
+</div>

@@ -1,6 +1,7 @@
 @import './header';
 @import './home';
 @import './ui';
+@import './movie-panel';
 
 html,
 body {
@@ -11,7 +12,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1 {
+h1,
+p {
     margin: 0;
     padding: 0;
 }

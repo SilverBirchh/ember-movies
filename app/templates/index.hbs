@@ -1,5 +1,17 @@
 <section class='home'>
     <h1 class='home_title title'>Popular Movies</h1>
-    
+    {{#if model.movies.isRunning}}
+        <p class='home_loading'>Fetching movies...</p>
+    {{else}}
+        <div class='home_movies'>
+            {{#each model.movies.value.results as | movie |}}
+                <MoviePanel
+                 @title={{movie.title}} 
+                 @posterUrl={{movie.poster_path}}
+                 @id={{movie.id}}
+                 @isLiked={{contains model.likedMovies movie.id}} />
+            {{/each}}
+        </div>
+    {{/if}}
 </section>
 {{outlet}}
