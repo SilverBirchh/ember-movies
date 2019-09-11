@@ -1,0 +1,14 @@
+.likes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_table {
+        border-collapse: collapse;
+    }
+
+    &_cell {
+        border-bottom: 1px solid black;
+        padding: 10px;
+    }
+}

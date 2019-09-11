@@ -15,18 +15,23 @@ export default class MoviesService extends Service {
         })
     }
 
-    likeMovie(id) {        
+    likeMovie(id) {
         if (!this.likedMovieIds.includes(id)) {
-            this.likedMovies.pushObject({id});
+            const { title, release_date, poster_path } = this.movies.results.findBy('id', id);
+            this.likedMovies.pushObject({ id, title, release_date, poster_path });
+            setItem('movies', JSON.stringify(this.likedMovies));
         }
     }
 
-    dislikeMovie(id) { 
+    dislikeMovie(id) {
         const likedMovie = this.likedMovies.findBy('id', id)
         this.likedMovies.removeObject(likedMovie);
-    } 
+        setItem('movies', JSON.stringify(this.likedMovies));
+    }
 
     async getLikedMovies() {
+        const likedMovies = await getItem('movies');
+        this.likedMovies = JSON.parse(likedMovies) || [];
         return this.likedMovies;
     }
 
