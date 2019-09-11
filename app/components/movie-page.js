@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import ENV from 'ember-movies/config/environment'; 
 
-export default class MyComponent extends Component {
+export default class MoviePage extends Component {
 
     @service movies;
 

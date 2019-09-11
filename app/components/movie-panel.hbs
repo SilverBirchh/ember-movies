@@ -1,6 +1,8 @@
-<LinkTo @route="movie" @model={{@id}} @tagName='div' class='movie-panel'>
+<div class='movie-panel'>
     <img class='movie-panel_image' src={{this.posterUrl}} loading='lazy' alt={{@title}} />
-    <p class='movie-panel_title'>{{@title}}</p>
+    <LinkTo @route="movie" @model={{@id}} @tagName='div' class='movie-panel_title'>
+        {{@title}}
+    </LinkTo>
     <div class='heart {{if @isLiked 'heart--liked'}}' role='button'
         {{on "click" (if @isLiked (fn this.dislikeMovie @id) (fn this.likeMovie @id))}}></div>
-</LinkTo>
+</div>

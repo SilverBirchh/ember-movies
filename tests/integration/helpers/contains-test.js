@@ -6,12 +6,29 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Helper | contains', function(hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test('it returns true when the movie is in the array', async function(assert) {
+    this.set('items', [
+      {
+        id: 1
+      }
+    ]);
+    this.set('id', 1);
 
-    await render(hbs`{{contains inputValue}}`);
+    await render(hbs`{{contains items id}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'true');
+  });
+
+  test('it returns false when the movie is not in the array', async function(assert) {
+    this.set('items', [
+      {
+        id: 1
+      }
+    ]);
+    this.set('id', 11);
+
+    await render(hbs`{{contains items id}}`);
+
+    assert.equal(this.element.textContent.trim(), 'false');
   });
 });

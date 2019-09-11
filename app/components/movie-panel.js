@@ -2,9 +2,9 @@ import Component from '@glimmer/component';
 import { computed } from '@ember/object';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import ENV from 'ember-movies/config/environment'; 
+import ENV from 'ember-movies/config/environment';
 
-export default class MyComponent extends Component {
+export default class MoviePanel extends Component {
 
     @service movies;
 
@@ -15,12 +15,12 @@ export default class MyComponent extends Component {
 
     @action
     likeMovie(id) {
-        this.movies.likeMovie(id);        
+        this.movies.likeMovie(id);
     }
 
     @action
     dislikeMovie(id) {
-        this.movies.dislikeMovie(id);        
+        this.movies.dislikeMovie(id);
     }
 
 }

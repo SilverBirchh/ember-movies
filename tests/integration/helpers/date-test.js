@@ -6,12 +6,11 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Helper | date', function(hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test('it a beautiful date', async function(assert) {
+    this.set('date', '2019-09-08');
 
-    await render(hbs`{{date inputValue}}`);
+    await render(hbs`{{date date}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), '8 / 8 / 2019');
   });
 });
