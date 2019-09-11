@@ -51,6 +51,12 @@ module('Integration | Component | movie-page', function(hooks) {
         assert.dom('.heart--liked').exists();
     });
 
+    test('it renders an error when it cannot find a movie', async function(assert) {
+        await render(hbs `<MoviePage @movie={{null}} />`);
+        assert.dom('.title').doesNotExist();
+        assert.dom('.movie-page_error').exists();
+    });
+
     test('it renders a movie with a empty heart when it is not liked', async function(assert) {
 
         set(this, 'movie', {
