@@ -1,0 +1,16 @@
+.header {
+    height: 32px;
+    width: 100;
+    background-color: teal;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+
+    &_link {
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
