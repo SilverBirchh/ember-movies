@@ -24,8 +24,6 @@ module('Unit | Route | movie', function(hooks) {
             }
         });
         const model = await route.model(1);
-        console.log(model);
-
         assert.equal(1, model.likedMovies.value.length);
         assert.equal('Robo Cop', model.movie.value.title);
     });

@@ -24,8 +24,6 @@ module('Unit | Route | index', function(hooks) {
             }
         });
         const model = await route.model();
-        console.log(model);
-
         assert.equal(1, model.likedMovies.value.length);
         assert.equal(1, model.movies.value.length);
     });
