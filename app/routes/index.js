@@ -12,12 +12,12 @@ export default class IndexRoute extends Route {
         };
     }
 
-    @task(function* () {
+    @task(function*() {
         const movies = yield this.movies.getMovies();
         return movies;
     }) movieTask;
 
-    @task(function* () {
+    @task(function*() {
         const movies = yield this.movies.getLikedMovies();
         return movies;
     }) likedTask;

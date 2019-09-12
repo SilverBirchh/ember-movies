@@ -1,18 +1,14 @@
 .movie-page {
-
     &_details {
         display: flex;
         margin-top: 10px;
     }
-
     &_image-container {
         position: relative;
     }
-
     &_image {
         width: 300px;
     }
-
     &_overview {
         margin-left: 5px;
     }

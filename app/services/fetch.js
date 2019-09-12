@@ -1,6 +1,6 @@
 import Service from '@ember/service';
 import fetch from 'fetch';
-import ENV from 'ember-movies/config/environment'; 
+import ENV from 'ember-movies/config/environment';
 
 export default class FetchService extends Service {
 

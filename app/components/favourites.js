@@ -8,7 +8,7 @@ export default class Favourites extends Component {
 
     @action
     dislikeMovie(id) {
-        this.movies.dislikeMovie(id);        
+        this.movies.dislikeMovie(id);
     }
 
 }
