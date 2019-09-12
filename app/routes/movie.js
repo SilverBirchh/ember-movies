@@ -12,12 +12,12 @@ export default class MovieRoute extends Route {
         }
     }
 
-    @task(function* (id) {
-        const movie = yield this.movies.getMoviesById(id);
+    @task(function*(id) {
+        const movie = yield this.movies.getMovieById(id);
         return movie;
     }) movieTask;
 
-    @task(function* () {
+    @task(function*() {
         const movies = yield this.movies.getLikedMovies();
         return movies;
     }) likedTask;

@@ -49,13 +49,9 @@ export default class MoviesService extends Service {
         return this.movies;
     }
 
-    async getMoviesById(id) {
-        if (this.movies === null) {
-            await this.getMovies();
-        }
-        const movie = this.movies.results.findBy('id', parseInt(id));
-
-        if (movie) {
+    async getMovieById(id) {
+        if (this.movies !== null) {
+            const movie = this.movies.results.findBy('id', parseInt(id));
             return movie;
         }
 

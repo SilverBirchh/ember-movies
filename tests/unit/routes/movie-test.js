@@ -7,7 +7,7 @@ module('Unit | Route | movie', function(hooks) {
     test('it loads liked and all movies', async function(assert) {
         let route = this.owner.lookup('route:movie').reopen({
             movies: {
-                getMoviesById() {
+                getMovieById() {
                     return {
                         id: 1,
                         title: 'Robo Cop',
